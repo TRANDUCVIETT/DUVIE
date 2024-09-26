@@ -1,0 +1,75 @@
+<!DOCTYPE html>  
+<html lang="vi">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="styles.css">  
+    <title>Đăng Nhập</title>  
+</head>  
+<body>  
+    <div class="container">  
+        <div class="form-container">  
+            <h2>Đăng nhập</h2>  
+            <form id="loginForm">  
+                <label for="email">Email đăng nhập</label>  
+                <input type="email" id="email" placeholder="Vui lòng nhập email" required>  
+                
+                <label for="password">Mật khẩu</label>  
+                <div class="password-container">   
+                    <input type="password" id="password" placeholder="Vui lòng nhập mật khẩu" required>  
+                    <button type="button" id="togglePassword"></button>  
+                </div>  
+
+                <a href="#" class="forgot-password">Quên mật khẩu</a>  
+                
+                <button type="submit" class="login-button">Đăng nhập</button>  
+                <div id="errorMessages" style="color: red;"></div>  
+            </form>  
+            <p class="register-text">Bạn chưa có tài khoản <a href="#">Đăng ký</a></p>  
+        </div>  
+        <div class="image-container">  
+            <img src="https://scontent.fhan1-1.fna.fbcdn.net/v/t39.30808-6/460634669_1033119828359822_5633209928675325668_n.jpg?stp=cp6_dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=56YLx80OZxkQ7kNvgFympTW&_nc_ht=scontent.fhan1-1.fna&_nc_gid=ANKUi1_OmK6qm8HG6MnLDtt&oh=00_AYDOyDPmQ_MeWSxlom9TzfERRL3je8KRxwQ4UfMYbCvV8A&oe=66FAA625" alt="Quảng cáo" />  
+        </div>  
+    </div>  
+
+    <script>  
+        // Chức năng show/hide mật khẩu  
+        document.getElementById('togglePassword').addEventListener('click', function () {  
+            const passwordInput = document.getElementById('password');  
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';  
+            passwordInput.setAttribute('type', type);  
+            this.textContent = type === 'password' ? '👁️' : '🙈';  
+        });  
+
+        // Xác thực form  
+        document.getElementById('loginForm').addEventListener('submit', function (event) {  
+            event.preventDefault(); // Ngăn chặn gửi form  
+            const email = document.getElementById('email').value;  
+            const password = document.getElementById('password').value;  
+            const errorMessages = document.getElementById('errorMessages');  
+            errorMessages.innerHTML = ''; // Xóa thông báo lỗi cũ  
+
+            let isValid = true;  
+
+            // Kiểm tra định dạng email  
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  
+            if (!emailPattern.test(email)) {  
+                errorMessages.innerHTML += '<p>Email không hợp lệ.</p>';  
+                isValid = false;  
+            }  
+
+            // Kiểm tra truờng password không rỗng  
+            if (password.trim() === '') {  
+                errorMessages.innerHTML += '<p>Password không được để trống.</p>';  
+                isValid = false;  
+            }  
+
+            // Nếu hợp lệ, gửi form  
+            if (isValid) {  
+                alert("Form đã được gửi!");  
+                // Ở đây bạn có thể thêm mã để gửi form đến server  
+            }  
+        });  
+    </script>  
+</body>  
+</html>

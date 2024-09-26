@@ -1,0 +1,95 @@
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f0f0f0;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    margin: 0;  
+}  
+
+.container {  
+    display: flex;  
+    background-color: white;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+    overflow: hidden;  
+    width: 800px; /* Chiều rộng tổng thể */  
+}  
+
+.form-container {  
+    padding: 20px;  
+    width: 50%; /* Chiếm 50% chiều rộng */  
+}  
+
+h2 {  
+    text-align: center;  
+    margin-bottom: 20px;  
+}  
+
+label {  
+    display: block;  
+    margin-bottom: 5px;  
+}  
+
+input {  
+    width: 95%;  
+    padding: 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+}  
+
+.password-container {  
+    position: relative;  
+}  
+
+#togglePassword {  
+    position: absolute;  
+    right: 0px; /* Khoảng cách từ bên phải */  
+    top: 40%; /* Căn giữa theo chiều dọc */  
+    transform: translateY(-50%); /* Căn giữa chính xác */  
+    background: transparent;  
+    border: none;  
+    cursor: pointer;  
+    outline: none;  
+}  
+
+.forgot-password {  
+    display: block;  
+    text-align: right;  
+    margin-bottom: 10px;  
+}  
+
+.login-button {  
+    width: 100%;  
+    padding: 10px;  
+    background-color: #007bff;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+.login-button:hover {  
+    background-color: #0056b3;  
+}  
+
+.register-text {  
+    text-align: center;  
+    margin-top: 10px;  
+}  
+
+.image-container {  
+    width: 50%; /* Chiếm 50% chiều rộng */  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    background-color: #007bff; /* Màu nền cho phần hình ảnh */  
+}  
+
+.image-container img {  
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng */  
+    height: auto;  
+    border-radius: 10px; /* Bo góc cho hình ảnh */  
+}
